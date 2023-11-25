@@ -93,15 +93,124 @@ print('The dimension of the train dataset is:', train.shape)
 print('The dimension of the test dataset is:', test.shape)
 ```
 
+    The dimension of the train dataset is: (3000888, 6)
+    The dimension of the test dataset is: (28512, 5)
+    
+
 
 ```python
 train.describe()
 ```
 
 
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>store_nbr</th>
+      <th>sales</th>
+      <th>onpromotion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>3.000888e+06</td>
+      <td>3.000888e+06</td>
+      <td>3.000888e+06</td>
+      <td>3.000888e+06</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>1.500444e+06</td>
+      <td>2.750000e+01</td>
+      <td>3.577757e+02</td>
+      <td>2.602770e+00</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>8.662819e+05</td>
+      <td>1.558579e+01</td>
+      <td>1.101998e+03</td>
+      <td>1.221888e+01</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>0.000000e+00</td>
+      <td>1.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>7.502218e+05</td>
+      <td>1.400000e+01</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>1.500444e+06</td>
+      <td>2.750000e+01</td>
+      <td>1.100000e+01</td>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>2.250665e+06</td>
+      <td>4.100000e+01</td>
+      <td>1.958473e+02</td>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>3.000887e+06</td>
+      <td>5.400000e+01</td>
+      <td>1.247170e+05</td>
+      <td>7.410000e+02</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
 ```python
 train.info()
 ```
+
+    <class 'pandas.core.frame.DataFrame'>
+    RangeIndex: 3000888 entries, 0 to 3000887
+    Data columns (total 6 columns):
+     #   Column       Dtype  
+    ---  ------       -----  
+     0   id           int64  
+     1   date         object 
+     2   store_nbr    int64  
+     3   family       object 
+     4   sales        float64
+     5   onpromotion  int64  
+    dtypes: float64(1), int64(3), object(2)
+    memory usage: 137.4+ MB
+    
 
 
 ```python
@@ -109,9 +218,104 @@ test.describe()
 ```
 
 
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>store_nbr</th>
+      <th>onpromotion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>2.851200e+04</td>
+      <td>28512.000000</td>
+      <td>28512.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>3.015144e+06</td>
+      <td>27.500000</td>
+      <td>6.965383</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>8.230850e+03</td>
+      <td>15.586057</td>
+      <td>20.683952</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>3.000888e+06</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>3.008016e+06</td>
+      <td>14.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>3.015144e+06</td>
+      <td>27.500000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>3.022271e+06</td>
+      <td>41.000000</td>
+      <td>6.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>3.029399e+06</td>
+      <td>54.000000</td>
+      <td>646.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
 ```python
 test.info()
 ```
+
+    <class 'pandas.core.frame.DataFrame'>
+    RangeIndex: 28512 entries, 0 to 28511
+    Data columns (total 5 columns):
+     #   Column       Non-Null Count  Dtype 
+    ---  ------       --------------  ----- 
+     0   id           28512 non-null  int64 
+     1   date         28512 non-null  object
+     2   store_nbr    28512 non-null  int64 
+     3   family       28512 non-null  object
+     4   onpromotion  28512 non-null  int64 
+    dtypes: int64(3), object(2)
+    memory usage: 1.1+ MB
+    
 
 ### Import other supporting datasets
 
@@ -129,9 +333,153 @@ holidays.describe()
 ```
 
 
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>date</th>
+      <th>type</th>
+      <th>locale</th>
+      <th>locale_name</th>
+      <th>description</th>
+      <th>transferred</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>350</td>
+      <td>350</td>
+      <td>350</td>
+      <td>350</td>
+      <td>350</td>
+      <td>350</td>
+    </tr>
+    <tr>
+      <th>unique</th>
+      <td>312</td>
+      <td>6</td>
+      <td>3</td>
+      <td>24</td>
+      <td>103</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>top</th>
+      <td>2014-06-25</td>
+      <td>Holiday</td>
+      <td>National</td>
+      <td>Ecuador</td>
+      <td>Carnaval</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>freq</th>
+      <td>4</td>
+      <td>221</td>
+      <td>174</td>
+      <td>174</td>
+      <td>10</td>
+      <td>338</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
 ```python
 stores.describe()
 ```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>store_nbr</th>
+      <th>cluster</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>54.000000</td>
+      <td>54.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>27.500000</td>
+      <td>8.481481</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>15.732133</td>
+      <td>4.693395</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>1.000000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>14.250000</td>
+      <td>4.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>27.500000</td>
+      <td>8.500000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>40.750000</td>
+      <td>13.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>54.000000</td>
+      <td>17.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
 
 
 ```python
@@ -139,9 +487,144 @@ transactions.describe()
 ```
 
 
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>store_nbr</th>
+      <th>transactions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>83488.000000</td>
+      <td>83488.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>26.939237</td>
+      <td>1694.602158</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>15.608204</td>
+      <td>963.286644</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>1.000000</td>
+      <td>5.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>13.000000</td>
+      <td>1046.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>27.000000</td>
+      <td>1393.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>40.000000</td>
+      <td>2079.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>54.000000</td>
+      <td>8359.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
 ```python
 oil.describe()
 ```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>dcoilwtico</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>1175.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>67.714366</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>25.630476</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>26.190000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>46.405000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>53.190000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>95.660000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>110.620000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
 
 ### Join the different datasets that have a common feature
 
@@ -218,15 +701,26 @@ test['holiday_local'] = test.apply(loc_holiday, axis=1)
 print(f'Number of observations: {test.shape[0]}\n Number of features: {train.shape[1]}')
 ```
 
+    Number of observations: 28512
+     Number of features: 20
+    
+
 
 ```python
 print(f'Time period covered by the data: {train.date.nunique()} days\n First day: {train.date[0]} || Last day: {train.date.iloc[-1]}')
 ```
 
+    Time period covered by the data: 1684 days
+     First day: 2013-01-01 || Last day: 2017-08-15
+    
+
 
 ```python
 print(f'Numbers of stores: {train.store_nbr.nunique()}')
 ```
+
+    Numbers of stores: 54
+    
 
 ### Convert 'date' to pd.datetime
 
@@ -269,6 +763,12 @@ plt.show()
 ```
 
 
+    
+![png](StoreSales_files/StoreSales_50_0.png)
+    
+
+
+
 ```python
 # Group the data by the day of the month and calculate the average sales for each day.
 average_sales_per_day = train.groupby(train['date'].dt.day)['sales'].mean()
@@ -287,11 +787,23 @@ plt.show()
 ```
 
 
+    
+![png](StoreSales_files/StoreSales_51_0.png)
+    
+
+
+
 ```python
 plt.plot(train.groupby('day_of_week')['sales'].sum())
 plt.title('Averages Sales by day of week')
 plt.show()
 ```
+
+
+    
+![png](StoreSales_files/StoreSales_52_0.png)
+    
+
 
 ### First Conclusions:
 * On the first day of the years there are many no sales
@@ -318,6 +830,22 @@ plt.show()
 print(train.isna().sum().sort_values(ascending=False) / train.shape[0] * 100)
 ```
 
+    dcoilwtico          31.271879
+    id                   0.000000
+    date                 0.000000
+    store_nbr            0.000000
+    family               0.000000
+    sales                0.000000
+    onpromotion          0.000000
+    type_x               0.000000
+    cluster              0.000000
+    holiday_national     0.000000
+    holiday_regional     0.000000
+    holiday_local        0.000000
+    day_of_week          0.000000
+    dtype: float64
+    
+
 
 ```python
 # Use the next lowest value first and then the next highest value
@@ -331,9 +859,31 @@ train.dcoilwtico.isna().sum()
 ```
 
 
+
+
+    0
+
+
+
+
 ```python
 print(test.isna().sum().sort_values(ascending=False) / test.shape[0] * 100)
 ```
+
+    dcoilwtico          25.0
+    id                   0.0
+    date                 0.0
+    store_nbr            0.0
+    family               0.0
+    onpromotion          0.0
+    type_x               0.0
+    cluster              0.0
+    holiday_national     0.0
+    holiday_regional     0.0
+    holiday_local        0.0
+    day_of_week          0.0
+    dtype: float64
+    
 
 
 ```python
@@ -346,6 +896,13 @@ test['dcoilwtico'] = test['dcoilwtico'].fillna(method='ffill')
 ```python
 test.dcoilwtico.isna().sum()
 ```
+
+
+
+
+    0
+
+
 
 ### Create Dataset for each store and product
 
@@ -375,6 +932,10 @@ for store in test['store_nbr'].unique():
 
         test_dict[key] = subset_df
 ```
+
+    CPU times: total: 4min 21s
+    Wall time: 4min 36s
+    
 
 
 ```python
@@ -423,22 +984,12 @@ def train_prophet_model(
 
         Returns:
             Prophet: The fitted Prophet model.
-
-        Example:
-            # Train the Prophet model
-            best_model = ProphetModel.train_prophet_model(df, 'value', 'date')
-
-            # Make predictions with the model
-            future = best_model.make_future_dataframe(periods=10)
-            forecast = best_model.predict(future)
-
-            print(forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']].tail(10))
         """
         
         # Prepare the data in the format required by Prophet
         df_prophet = df.rename(columns={target: 'y', dates: 'ds'})
 
-        best_model = Prophet(changepoint_prior_scale = 3.5).fit(df_prophet)
+        best_model = Prophet(changepoint_prior_scale = 3.2).fit(df_prophet)
 
         return best_model
 ```
@@ -455,6 +1006,3470 @@ for key in train_dict.keys():
     with open(f'models/{key}.json', 'w') as fout:
         fout.write(model_to_json(model))
 ```
+
+    00:59:09 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:09 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:10 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:10 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:10 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:11 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:11 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:12 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:12 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:12 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:12 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:13 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:13 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:13 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:13 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:14 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:14 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:14 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:14 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:15 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:15 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:15 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:16 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:16 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:16 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:17 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:17 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:17 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:18 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:18 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:18 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:19 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:19 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:19 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:20 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:20 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:20 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:21 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:21 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:22 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:22 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:22 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:23 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:23 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:23 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:24 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:24 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:24 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:25 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:25 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:25 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:26 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:26 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:27 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:27 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:27 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:28 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:28 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:28 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:29 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:29 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:30 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:30 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:30 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:31 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:31 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:31 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:32 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:32 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:33 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:33 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:34 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:34 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:34 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:35 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:35 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:35 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:36 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:36 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:37 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:37 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:37 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:38 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:38 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:38 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:39 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:39 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:39 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:40 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:40 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:40 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:41 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:41 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:42 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:42 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:42 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:43 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:43 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:43 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:44 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:44 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:45 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:45 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:46 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:46 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:46 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:46 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:47 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:47 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:47 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:48 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:48 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:48 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:49 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:49 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:49 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:49 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:50 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:50 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:51 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:51 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:52 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:52 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:52 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:53 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:53 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:53 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:54 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:54 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:55 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:55 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:55 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:56 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:56 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:56 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:57 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:57 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:57 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:58 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:58 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:58 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:58 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:59 - cmdstanpy - INFO - Chain [1] start processing
+    00:59:59 - cmdstanpy - INFO - Chain [1] done processing
+    00:59:59 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:00 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:00 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:00 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:01 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:01 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:01 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:01 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:02 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:02 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:02 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:03 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:03 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:03 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:03 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:04 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:04 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:05 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:05 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:06 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:06 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:07 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:07 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:07 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:08 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:08 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:08 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:09 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:09 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:09 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:09 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:10 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:10 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:10 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:10 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:11 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:11 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:12 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:12 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:12 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:12 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:13 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:13 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:14 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:14 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:15 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:15 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:15 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:16 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:16 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:17 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:17 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:17 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:17 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:18 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:18 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:19 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:19 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:19 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:20 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:20 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:21 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:21 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:22 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:22 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:23 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:23 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:23 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:24 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:24 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:24 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:25 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:25 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:25 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:26 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:26 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:26 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:27 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:27 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:28 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:28 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:28 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:29 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:29 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:29 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:30 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:31 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:31 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:31 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:32 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:32 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:32 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:32 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:33 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:33 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:34 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:34 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:34 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:35 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:35 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:35 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:36 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:36 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:37 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:37 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:37 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:38 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:39 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:39 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:39 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:39 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:40 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:40 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:41 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:41 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:42 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:42 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:43 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:43 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:43 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:43 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:44 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:44 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:44 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:45 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:45 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:45 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:46 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:46 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:47 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:47 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:48 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:48 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:48 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:48 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:49 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:49 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:49 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:50 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:50 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:50 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:51 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:51 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:51 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:51 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:52 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:52 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:53 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:53 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:54 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:54 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:54 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:54 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:55 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:55 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:55 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:55 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:56 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:56 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:57 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:57 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:57 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:58 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:58 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:58 - cmdstanpy - INFO - Chain [1] start processing
+    01:00:59 - cmdstanpy - INFO - Chain [1] done processing
+    01:00:59 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:00 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:00 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:01 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:01 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:01 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:02 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:02 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:03 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:03 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:03 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:04 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:04 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:05 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:05 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:06 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:06 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:07 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:07 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:08 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:08 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:09 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:09 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:09 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:10 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:11 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:11 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:12 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:12 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:12 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:12 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:13 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:13 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:14 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:14 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:15 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:15 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:15 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:15 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:16 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:16 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:17 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:17 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:17 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:18 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:18 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:19 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:19 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:19 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:20 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:20 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:21 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:21 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:22 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:22 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:22 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:23 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:23 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:23 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:24 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:24 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:25 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:25 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:26 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:26 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:27 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:27 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:28 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:28 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:28 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:28 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:29 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:29 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:30 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:30 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:30 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:31 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:31 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:31 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:32 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:32 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:33 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:33 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:33 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:34 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:34 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:34 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:35 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:35 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:36 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:36 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:36 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:36 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:37 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:37 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:38 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:38 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:38 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:38 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:39 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:39 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:40 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:40 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:40 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:40 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:41 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:41 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:42 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:42 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:43 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:43 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:44 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:44 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:44 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:44 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:45 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:45 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:45 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:45 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:46 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:46 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:46 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:47 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:47 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:47 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:48 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:48 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:49 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:49 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:50 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:50 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:51 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:51 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:52 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:52 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:52 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:53 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:53 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:53 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:54 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:54 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:55 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:55 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:56 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:56 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:57 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:57 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:58 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:58 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:59 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:59 - cmdstanpy - INFO - Chain [1] start processing
+    01:01:59 - cmdstanpy - INFO - Chain [1] done processing
+    01:01:59 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:00 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:00 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:00 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:01 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:01 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:01 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:02 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:02 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:03 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:03 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:03 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:04 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:04 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:04 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:05 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:05 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:05 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:06 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:06 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:07 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:07 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:07 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:07 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:08 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:08 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:08 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:09 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:09 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:10 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:10 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:10 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:11 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:11 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:11 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:12 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:12 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:12 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:13 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:14 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:14 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:15 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:15 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:15 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:16 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:16 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:16 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:17 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:17 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:17 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:18 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:18 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:18 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:19 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:19 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:20 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:20 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:20 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:20 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:21 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:21 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:21 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:22 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:22 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:22 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:23 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:23 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:23 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:24 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:24 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:25 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:25 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:25 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:26 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:26 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:27 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:27 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:27 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:27 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:28 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:28 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:29 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:29 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:30 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:30 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:30 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:30 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:31 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:31 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:31 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:32 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:32 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:32 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:33 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:33 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:34 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:34 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:34 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:35 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:35 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:36 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:36 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:36 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:37 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:37 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:38 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:38 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:39 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:39 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:40 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:40 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:40 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:41 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:41 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:42 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:42 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:42 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:43 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:43 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:44 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:44 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:45 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:45 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:46 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:46 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:47 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:47 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:48 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:48 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:48 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:49 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:50 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:50 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:50 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:50 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:51 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:51 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:52 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:52 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:53 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:53 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:53 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:53 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:54 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:54 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:55 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:55 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:55 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:56 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:56 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:56 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:57 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:57 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:58 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:58 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:59 - cmdstanpy - INFO - Chain [1] done processing
+    01:02:59 - cmdstanpy - INFO - Chain [1] start processing
+    01:02:59 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:00 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:00 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:01 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:01 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:02 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:02 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:02 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:03 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:03 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:04 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:04 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:05 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:05 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:06 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:06 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:07 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:07 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:07 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:07 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:08 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:08 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:09 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:09 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:10 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:10 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:10 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:10 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:11 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:11 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:12 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:12 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:12 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:13 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:13 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:13 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:14 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:14 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:14 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:14 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:15 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:15 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:16 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:16 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:17 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:17 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:17 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:18 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:18 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:18 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:19 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:19 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:19 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:20 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:20 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:20 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:21 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:21 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:21 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:22 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:22 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:22 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:23 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:23 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:23 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:23 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:24 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:24 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:25 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:25 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:26 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:26 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:26 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:27 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:27 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:27 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:28 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:29 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:29 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:29 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:30 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:30 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:30 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:31 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:31 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:31 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:32 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:32 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:33 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:33 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:33 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:34 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:34 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:34 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:35 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:35 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:35 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:36 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:36 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:36 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:37 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:37 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:37 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:38 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:38 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:38 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:39 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:39 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:39 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:39 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:40 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:40 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:40 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:41 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:41 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:41 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:42 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:42 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:43 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:43 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:43 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:44 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:44 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:44 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:45 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:45 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:45 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:46 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:46 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:46 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:47 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:47 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:48 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:48 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:48 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:49 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:49 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:50 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:50 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:50 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:51 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:51 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:52 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:52 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:52 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:53 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:53 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:53 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:54 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:54 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:55 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:55 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:55 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:56 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:56 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:57 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:57 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:58 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:58 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:58 - cmdstanpy - INFO - Chain [1] start processing
+    01:03:59 - cmdstanpy - INFO - Chain [1] done processing
+    01:03:59 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:00 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:00 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:01 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:01 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:01 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:02 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:02 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:02 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:03 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:03 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:04 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:04 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:05 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:05 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:05 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:06 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:06 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:06 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:07 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:07 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:07 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:08 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:08 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:09 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:09 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:09 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:10 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:10 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:10 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:10 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:11 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:11 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:12 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:12 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:12 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:13 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:13 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:13 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:14 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:14 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:15 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:15 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:16 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:16 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:17 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:17 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:17 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:18 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:18 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:18 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:19 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:19 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:20 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:20 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:21 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:21 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:22 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:22 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:23 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:23 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:24 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:24 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:25 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:25 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:26 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:27 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:27 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:28 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:28 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:28 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:29 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:29 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:30 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:30 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:31 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:31 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:32 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:32 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:32 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:33 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:33 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:33 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:34 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:34 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:35 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:35 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:35 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:36 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:36 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:37 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:37 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:37 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:38 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:38 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:39 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:39 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:40 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:40 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:41 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:41 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:41 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:41 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:42 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:43 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:43 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:43 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:44 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:44 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:45 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:46 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:46 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:47 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:47 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:48 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:48 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:48 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:49 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:49 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:50 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:50 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:51 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:51 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:52 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:52 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:53 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:53 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:54 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:54 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:55 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:55 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:56 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:56 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:57 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:57 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:57 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:57 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:58 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:58 - cmdstanpy - INFO - Chain [1] start processing
+    01:04:59 - cmdstanpy - INFO - Chain [1] done processing
+    01:04:59 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:00 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:00 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:01 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:01 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:01 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:02 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:02 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:02 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:03 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:03 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:04 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:04 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:05 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:05 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:06 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:06 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:06 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:07 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:07 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:07 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:08 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:08 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:08 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:09 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:09 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:10 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:10 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:10 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:11 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:11 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:12 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:12 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:13 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:13 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:14 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:14 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:14 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:15 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:15 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:15 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:16 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:16 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:17 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:17 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:18 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:18 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:18 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:19 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:19 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:19 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:20 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:20 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:20 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:21 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:21 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:21 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:22 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:22 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:22 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:22 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:23 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:23 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:24 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:24 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:25 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:25 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:26 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:26 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:26 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:27 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:27 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:28 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:28 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:28 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:29 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:29 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:30 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:30 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:30 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:30 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:31 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:31 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:32 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:32 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:32 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:32 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:33 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:33 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:34 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:34 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:34 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:35 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:35 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:35 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:36 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:36 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:37 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:37 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:38 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:38 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:38 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:39 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:39 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:39 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:40 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:40 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:41 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:41 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:42 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:42 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:43 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:43 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:44 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:44 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:45 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:45 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:46 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:46 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:47 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:47 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:48 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:48 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:49 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:49 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:49 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:50 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:50 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:50 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:51 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:51 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:51 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:52 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:52 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:52 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:53 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:53 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:54 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:54 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:55 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:55 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:55 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:56 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:56 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:57 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:57 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:57 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:58 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:58 - cmdstanpy - INFO - Chain [1] start processing
+    01:05:59 - cmdstanpy - INFO - Chain [1] done processing
+    01:05:59 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:00 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:00 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:01 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:01 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:02 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:02 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:03 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:03 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:04 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:04 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:05 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:05 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:06 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:06 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:07 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:07 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:07 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:08 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:08 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:08 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:09 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:09 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:10 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:10 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:11 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:11 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:12 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:12 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:12 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:13 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:13 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:14 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:14 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:14 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:15 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:15 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:16 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:16 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:16 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:17 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:17 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:17 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:18 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:18 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:19 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:19 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:19 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:20 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:20 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:21 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:21 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:21 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:22 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:22 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:23 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:23 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:24 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:24 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:25 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:25 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:26 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:26 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:27 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:27 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:28 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:28 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:29 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:29 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:29 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:30 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:30 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:30 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:31 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:31 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:32 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:32 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:33 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:33 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:33 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:34 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:34 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:34 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:35 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:35 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:36 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:36 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:36 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:36 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:37 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:37 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:38 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:38 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:39 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:39 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:39 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:39 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:40 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:40 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:40 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:40 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:41 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:41 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:41 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:41 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:42 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:42 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:43 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:43 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:43 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:44 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:44 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:45 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:45 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:46 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:46 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:46 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:47 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:47 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:48 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:48 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:48 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:48 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:49 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:49 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:49 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:50 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:50 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:50 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:51 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:51 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:51 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:51 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:52 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:52 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:53 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:53 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:53 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:54 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:54 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:54 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:55 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:55 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:56 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:56 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:57 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:57 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:57 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:58 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:58 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:58 - cmdstanpy - INFO - Chain [1] start processing
+    01:06:59 - cmdstanpy - INFO - Chain [1] done processing
+    01:06:59 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:00 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:00 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:01 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:01 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:01 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:02 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:02 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:03 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:03 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:03 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:04 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:04 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:05 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:05 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:05 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:06 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:06 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:06 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:07 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:07 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:07 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:08 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:08 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:08 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:09 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:09 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:10 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:10 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:11 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:11 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:12 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:12 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:13 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:13 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:13 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:14 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:14 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:14 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:15 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:15 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:16 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:16 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:16 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:16 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:17 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:17 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:18 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:18 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:19 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:19 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:20 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:20 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:21 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:21 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:22 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:22 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:23 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:23 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:23 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:24 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:24 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:24 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:25 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:25 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:26 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:26 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:27 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:27 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:28 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:28 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:29 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:29 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:29 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:30 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:30 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:30 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:31 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:31 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:32 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:32 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:32 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:33 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:33 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:33 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:34 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:34 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:34 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:35 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:35 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:35 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:36 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:36 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:37 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:37 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:38 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:38 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:38 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:39 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:39 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:39 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:40 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:40 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:40 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:41 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:41 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:41 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:42 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:42 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:42 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:43 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:43 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:43 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:44 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:44 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:44 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:45 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:45 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:46 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:46 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:47 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:47 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:48 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:48 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:49 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:49 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:49 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:50 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:50 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:51 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:51 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:52 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:52 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:52 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:53 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:53 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:54 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:54 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:54 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:55 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:55 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:56 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:56 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:57 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:57 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:57 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:58 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:58 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:58 - cmdstanpy - INFO - Chain [1] start processing
+    01:07:59 - cmdstanpy - INFO - Chain [1] done processing
+    01:07:59 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:00 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:00 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:01 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:01 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:01 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:02 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:02 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:03 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:03 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:03 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:04 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:04 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:04 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:05 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:05 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:05 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:06 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:06 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:07 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:07 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:08 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:08 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:08 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:09 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:09 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:10 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:10 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:11 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:11 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:12 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:12 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:13 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:13 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:13 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:14 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:14 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:15 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:15 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:15 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:15 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:16 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:16 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:17 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:17 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:18 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:18 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:18 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:19 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:19 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:19 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:19 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:20 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:20 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:20 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:21 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:21 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:21 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:22 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:22 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:22 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:23 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:23 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:23 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:24 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:24 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:25 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:25 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:25 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:26 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:26 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:27 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:27 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:28 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:28 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:29 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:29 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:29 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:29 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:30 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:30 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:30 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:31 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:31 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:31 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:32 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:32 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:33 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:33 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:34 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:34 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:35 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:35 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:35 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:35 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:36 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:36 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:37 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:37 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:38 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:38 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:38 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:39 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:39 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:40 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:40 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:40 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:41 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:41 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:42 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:42 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:43 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:43 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:44 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:44 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:44 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:45 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:45 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:46 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:46 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:46 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:46 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:47 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:47 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:47 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:48 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:48 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:49 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:49 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:50 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:50 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:50 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:50 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:51 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:51 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:52 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:52 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:53 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:53 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:54 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:54 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:55 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:55 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:56 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:56 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:56 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:57 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:57 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:57 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:58 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:58 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:58 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:59 - cmdstanpy - INFO - Chain [1] start processing
+    01:08:59 - cmdstanpy - INFO - Chain [1] done processing
+    01:08:59 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:00 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:00 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:01 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:01 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:02 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:02 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:03 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:03 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:04 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:04 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:05 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:05 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:06 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:06 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:06 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:07 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:07 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:07 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:08 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:08 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:09 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:09 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:10 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:10 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:10 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:10 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:11 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:11 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:11 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:11 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:12 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:12 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:12 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:13 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:13 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:13 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:14 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:14 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:15 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:15 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:16 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:16 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:17 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:17 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:18 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:18 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:18 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:19 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:19 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:19 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:20 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:20 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:21 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:21 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:21 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:22 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:22 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:22 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:23 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:23 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:24 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:24 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:25 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:25 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:25 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:26 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:26 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:26 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:27 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:28 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:28 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:28 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:29 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:29 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:29 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:30 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:30 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:30 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:31 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:31 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:32 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:32 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:32 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:33 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:33 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:33 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:34 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:34 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:35 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:35 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:35 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:36 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:36 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:36 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:37 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:37 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:38 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:38 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:39 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:39 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:40 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:40 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:40 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:41 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:41 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:41 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:42 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:43 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:43 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:43 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:44 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:44 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:45 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:45 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:45 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:46 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:46 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:46 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:47 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:47 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:48 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:48 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:48 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:49 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:49 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:49 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:50 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:50 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:51 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:51 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:52 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:52 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:53 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:53 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:54 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:54 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:54 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:55 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:55 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:55 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:56 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:56 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:57 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:57 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:57 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:58 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:58 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:58 - cmdstanpy - INFO - Chain [1] start processing
+    01:09:59 - cmdstanpy - INFO - Chain [1] done processing
+    01:09:59 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:00 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:00 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:00 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:01 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:01 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:01 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:02 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:02 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:02 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:03 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:03 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:03 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:04 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:04 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:04 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:05 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:05 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:05 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:06 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:06 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:06 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:07 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:07 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:07 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:08 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:08 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:09 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:09 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:09 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:09 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:10 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:10 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:11 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:11 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:11 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:11 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:12 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:12 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:13 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:13 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:13 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:14 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:14 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:15 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:15 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:16 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:16 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:16 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:16 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:17 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:17 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:18 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:19 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:19 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:20 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:20 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:21 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:21 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:22 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:22 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:22 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:23 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:23 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:23 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:24 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:24 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:25 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:25 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:25 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:25 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:26 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:26 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:27 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:27 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:27 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:28 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:28 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:29 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:29 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:29 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:30 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:30 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:31 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:31 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:32 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:32 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:33 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:33 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:34 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:34 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:34 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:35 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:35 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:35 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:36 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:36 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:37 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:37 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:38 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:38 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:38 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:39 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:39 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:39 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:40 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:40 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:41 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:42 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:42 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:43 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:43 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:43 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:44 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:44 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:44 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:45 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:45 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:46 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:46 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:46 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:47 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:47 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:48 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:48 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:49 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:49 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:49 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:49 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:50 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:50 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:51 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:51 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:51 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:51 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:52 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:52 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:52 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:53 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:53 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:54 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:54 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:55 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:55 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:55 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:56 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:56 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:57 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:57 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:57 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:58 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:58 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:58 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:59 - cmdstanpy - INFO - Chain [1] done processing
+    01:10:59 - cmdstanpy - INFO - Chain [1] start processing
+    01:10:59 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:00 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:00 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:00 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:01 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:01 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:02 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:02 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:02 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:03 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:03 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:03 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:04 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:04 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:05 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:05 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:06 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:06 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:07 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:07 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:08 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:08 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:08 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:09 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:10 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:10 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:11 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:11 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:11 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:12 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:13 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:13 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:14 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:14 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:14 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:15 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:15 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:15 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:16 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:16 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:16 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:17 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:17 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:18 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:18 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:18 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:19 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:19 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:20 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:20 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:20 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:20 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:21 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:21 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:22 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:22 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:23 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:23 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:23 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:24 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:24 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:24 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:25 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:25 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:26 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:26 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:27 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:27 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:27 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:28 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:28 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:28 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:29 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:29 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:30 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:30 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:31 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:31 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:32 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:32 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:32 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:33 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:33 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:33 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:33 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:34 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:34 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:34 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:35 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:35 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:36 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:36 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:37 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:37 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:38 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:38 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:38 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:39 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:39 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:39 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:40 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:40 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:41 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:41 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:42 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:42 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:42 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:43 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:43 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:43 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:44 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:44 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:45 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:45 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:46 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:46 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:46 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:47 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:47 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:47 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:48 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:48 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:49 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:49 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:50 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:50 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:51 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:51 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:51 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:52 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:52 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:52 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:53 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:53 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:54 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:54 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:55 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:55 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:55 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:56 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:56 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:56 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:57 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:57 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:58 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:58 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:59 - cmdstanpy - INFO - Chain [1] done processing
+    01:11:59 - cmdstanpy - INFO - Chain [1] start processing
+    01:11:59 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:00 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:00 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:00 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:01 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:01 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:02 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:02 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:03 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:03 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:03 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:03 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:04 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:04 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:05 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:05 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:06 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:06 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:06 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:07 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:07 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:07 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:08 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:08 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:08 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:08 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:09 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:09 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:10 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:10 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:11 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:11 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:11 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:12 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:12 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:12 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:13 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:13 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:14 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:14 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:15 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:15 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:15 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:16 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:16 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:16 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:17 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:17 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:17 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:18 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:18 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:19 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:19 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:19 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:20 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:20 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:21 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:21 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:22 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:22 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:23 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:23 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:24 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:24 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:25 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:25 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:25 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:26 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:26 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:26 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:27 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:27 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:28 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:29 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:29 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:29 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:30 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:30 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:31 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:31 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:32 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:32 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:32 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:33 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:33 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:33 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:33 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:34 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:34 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:35 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:35 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:35 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:36 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:36 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:37 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:37 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:37 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:38 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:38 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:38 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:39 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:39 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:40 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:40 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:41 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:41 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:41 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:42 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:42 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:42 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:43 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:43 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:43 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:43 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:44 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:44 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:45 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:45 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:46 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:46 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:46 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:47 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:47 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:47 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:48 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:48 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:49 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:49 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:50 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:50 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:50 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:51 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:51 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:51 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:52 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:52 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:53 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:53 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:54 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:54 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:54 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:54 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:55 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:55 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:55 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:56 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:56 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:56 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:57 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:57 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:58 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:58 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:58 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:59 - cmdstanpy - INFO - Chain [1] start processing
+    01:12:59 - cmdstanpy - INFO - Chain [1] done processing
+    01:12:59 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:00 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:00 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:00 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:01 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:01 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:02 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:02 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:03 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:03 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:03 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:04 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:04 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:05 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:05 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:06 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:06 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:07 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:07 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:07 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:08 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:08 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:09 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:09 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:09 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:10 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:10 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:11 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:11 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:12 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:12 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:13 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:13 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:13 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:14 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:14 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:15 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:15 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:15 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:16 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:16 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:16 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:17 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:17 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:17 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:18 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:18 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:19 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:20 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:20 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:21 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:21 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:21 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:22 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:22 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:22 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:23 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:23 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:23 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:24 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:24 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:25 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:25 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:25 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:26 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:26 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:26 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:27 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:27 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:28 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:28 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:29 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:29 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:29 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:30 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:31 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:31 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:31 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:31 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:32 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:32 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:33 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:33 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:33 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:34 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:34 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:34 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:35 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:35 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:36 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:36 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:36 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:37 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:37 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:37 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:38 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:38 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:39 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:39 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:40 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:40 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:41 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:41 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:41 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:42 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:42 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:42 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:43 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:43 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:43 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:44 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:44 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:45 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:45 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:45 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:46 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:46 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:47 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:47 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:47 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:47 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:48 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:48 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:49 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:49 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:49 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:50 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:50 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:50 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:51 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:51 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:52 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:52 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:52 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:53 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:53 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:53 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:54 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:54 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:55 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:55 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:56 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:56 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:57 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:57 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:58 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:58 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:58 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:58 - cmdstanpy - INFO - Chain [1] start processing
+    01:13:59 - cmdstanpy - INFO - Chain [1] done processing
+    01:13:59 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:00 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:00 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:00 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:00 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:01 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:01 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:02 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:02 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:02 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:03 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:03 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:04 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:04 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:05 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:05 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:05 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:06 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:06 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:07 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:07 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:08 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:08 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:09 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:09 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:10 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:10 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:11 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:11 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:12 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:12 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:13 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:13 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:14 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:14 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:14 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:15 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:16 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:16 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:17 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:17 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:18 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:18 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:19 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:19 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:20 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:20 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:20 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:20 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:21 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:21 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:22 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:22 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:23 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:23 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:24 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:24 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:25 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:25 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:25 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:26 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:26 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:26 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:27 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:27 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:28 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:28 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:29 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:29 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:30 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:30 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:31 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:31 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:32 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:32 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:33 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:33 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:34 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:34 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:35 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:35 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:36 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:36 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:37 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:37 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:38 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:38 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:38 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:39 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:39 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:39 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:40 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:40 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:41 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:41 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:42 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:42 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:43 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:43 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:44 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:44 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:44 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:45 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:45 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:45 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:46 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:46 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:46 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:47 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:47 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:48 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:48 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:48 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:49 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:49 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:50 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:50 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:51 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:51 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:52 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:52 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:53 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:53 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:53 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:54 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:54 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:54 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:55 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:55 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:56 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:56 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:56 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:57 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:57 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:57 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:58 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:58 - cmdstanpy - INFO - Chain [1] start processing
+    01:14:59 - cmdstanpy - INFO - Chain [1] done processing
+    01:14:59 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:00 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:00 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:01 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:01 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:02 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:02 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:02 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:03 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:03 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:04 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:04 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:04 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:05 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:05 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:06 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:06 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:06 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:07 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:07 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:07 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:08 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:08 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:08 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:09 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:09 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:09 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:10 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:10 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:11 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:11 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:11 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:12 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:12 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:12 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:13 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:13 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:14 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:14 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:14 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:15 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:15 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:15 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:16 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:16 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:17 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:17 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:18 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:18 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:19 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:19 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:19 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:19 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:20 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:20 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:21 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:21 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:21 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:22 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:22 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:23 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:23 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:23 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:24 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:24 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:25 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:25 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:26 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:26 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:27 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:27 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:28 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:28 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:29 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:29 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:29 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:30 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:30 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:30 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:31 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:32 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:32 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:32 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:33 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:33 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:34 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:34 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:34 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:34 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:35 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:35 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:35 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:36 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:36 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:36 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:37 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:37 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:38 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:38 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:38 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:38 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:39 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:39 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:40 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:40 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:41 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:41 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:41 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:42 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:42 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:43 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:43 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:43 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:44 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:44 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:45 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:45 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:46 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:46 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:46 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:47 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:47 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:47 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:48 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:48 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:49 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:49 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:50 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:50 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:51 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:51 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:52 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:52 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:53 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:53 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:54 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:54 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:54 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:55 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:55 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:56 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:56 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:56 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:57 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:57 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:58 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:58 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:59 - cmdstanpy - INFO - Chain [1] done processing
+    01:15:59 - cmdstanpy - INFO - Chain [1] start processing
+    01:15:59 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:00 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:00 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:00 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:01 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:01 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:01 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:02 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:02 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:02 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:03 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:03 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:03 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:03 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:04 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:04 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:05 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:05 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:06 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:06 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:06 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:07 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:07 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:08 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:08 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:09 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:09 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:09 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:10 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:10 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:10 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:11 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:11 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:11 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:12 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:12 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:13 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:13 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:14 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:14 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:14 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:15 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:15 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:15 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:16 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:16 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:17 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:17 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:18 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:18 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:19 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:19 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:20 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:20 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:21 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:21 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:21 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:21 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:22 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:23 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:23 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:23 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:24 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:24 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:24 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:25 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:25 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:25 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:26 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:26 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:26 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:27 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:27 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:27 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:28 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:28 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:29 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:29 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:29 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:29 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:30 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:30 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:31 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:31 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:32 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:32 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:33 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:33 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:34 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:34 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:34 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:35 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:35 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:35 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:36 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:36 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:37 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:37 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:37 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:38 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:38 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:38 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:39 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:39 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:40 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:40 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:41 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:41 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:42 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:42 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:43 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:43 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:44 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:44 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:45 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:45 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:45 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:46 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:46 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:46 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:47 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:47 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:48 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:48 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:48 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:49 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:49 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:50 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:50 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:50 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:51 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:51 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:51 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:52 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:52 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:52 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:53 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:53 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:53 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:53 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:54 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:54 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:55 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:55 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:55 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:56 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:56 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:57 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:58 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:58 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:59 - cmdstanpy - INFO - Chain [1] done processing
+    01:16:59 - cmdstanpy - INFO - Chain [1] start processing
+    01:16:59 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:00 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:00 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:00 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:01 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:01 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:01 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:02 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:02 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:02 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:03 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:03 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:04 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:04 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:05 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:05 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:06 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:06 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:07 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:07 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:07 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:08 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:08 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:09 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:10 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:10 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:11 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:11 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:11 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:11 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:12 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:12 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:13 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:13 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:14 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:14 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:15 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:15 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:16 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:16 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:16 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:16 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:17 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:17 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:17 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:18 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:18 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:18 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:19 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:19 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:19 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:20 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:20 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:20 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:21 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:21 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:21 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:22 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:23 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:23 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:23 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:23 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:24 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:24 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:25 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:25 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:26 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:26 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:27 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:27 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:27 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:28 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:28 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:28 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:29 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:29 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:29 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:30 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:30 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:30 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:31 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:31 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:32 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:32 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:33 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:33 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:34 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:34 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:35 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:35 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:36 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:36 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:37 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:37 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:37 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:38 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:38 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:38 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:39 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:39 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:40 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:40 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:41 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:41 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:42 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:42 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:43 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:43 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:43 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:43 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:44 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:44 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:45 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:45 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:46 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:46 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:46 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:46 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:47 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:47 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:48 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:48 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:49 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:49 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:50 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:50 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:50 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:50 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:51 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:51 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:52 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:52 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:52 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:53 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:53 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:53 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:54 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:54 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:55 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:55 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:55 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:55 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:56 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:56 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:57 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:57 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:58 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:58 - cmdstanpy - INFO - Chain [1] start processing
+    01:17:59 - cmdstanpy - INFO - Chain [1] done processing
+    01:17:59 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:00 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:00 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:01 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:02 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:02 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:03 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:03 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:03 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:04 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:04 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:05 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:05 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:06 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:06 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:07 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:07 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:08 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:08 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:08 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:09 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:09 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:09 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:10 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:10 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:11 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:11 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:11 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:11 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:12 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:12 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:12 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:13 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:13 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:13 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:14 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:14 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:15 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:15 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:15 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:15 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:16 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:16 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:17 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:17 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:18 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:18 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:18 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:19 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:19 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:19 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:20 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:20 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:20 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:21 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:21 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:21 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:22 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:22 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:23 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:23 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:24 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:24 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:24 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:25 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:25 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:26 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:27 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:27 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:28 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:28 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:29 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:29 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:29 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:30 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:30 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:31 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:31 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:31 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:33 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:33 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:33 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:33 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:34 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:35 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:35 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:35 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:36 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:36 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:37 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:37 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:37 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:38 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:38 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:38 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:39 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:39 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:40 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:40 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:40 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:41 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:41 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:41 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:42 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:42 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:43 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:43 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:44 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:44 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:45 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:45 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:45 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:46 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:46 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:46 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:47 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:47 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:48 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:48 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:48 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:48 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:49 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:49 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:50 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:50 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:51 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:51 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:51 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:52 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:52 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:52 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:53 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:54 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:55 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:55 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:55 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:56 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:57 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:57 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:58 - cmdstanpy - INFO - Chain [1] done processing
+    01:18:58 - cmdstanpy - INFO - Chain [1] start processing
+    01:18:59 - cmdstanpy - INFO - Chain [1] done processing
+    01:19:00 - cmdstanpy - INFO - Chain [1] start processing
+    01:19:01 - cmdstanpy - INFO - Chain [1] done processing
+    01:19:01 - cmdstanpy - INFO - Chain [1] start processing
+    01:19:02 - cmdstanpy - INFO - Chain [1] done processing
+    01:19:02 - cmdstanpy - INFO - Chain [1] start processing
+    01:19:03 - cmdstanpy - INFO - Chain [1] done processing
+    01:19:03 - cmdstanpy - INFO - Chain [1] start processing
+    01:19:04 - cmdstanpy - INFO - Chain [1] done processing
+    01:19:05 - cmdstanpy - INFO - Chain [1] start processing
+    01:19:06 - cmdstanpy - INFO - Chain [1] done processing
+    01:19:06 - cmdstanpy - INFO - Chain [1] start processing
+    01:19:07 - cmdstanpy - INFO - Chain [1] done processing
+    01:19:07 - cmdstanpy - INFO - Chain [1] start processing
+    01:19:08 - cmdstanpy - INFO - Chain [1] done processing
+    01:19:09 - cmdstanpy - INFO - Chain [1] start processing
+    01:19:10 - cmdstanpy - INFO - Chain [1] done processing
+    01:19:10 - cmdstanpy - INFO - Chain [1] start processing
+    01:19:11 - cmdstanpy - INFO - Chain [1] done processing
+    01:19:11 - cmdstanpy - INFO - Chain [1] start processing
+    01:19:12 - cmdstanpy - INFO - Chain [1] done processing
+    01:19:12 - cmdstanpy - INFO - Chain [1] start processing
+    01:19:13 - cmdstanpy - INFO - Chain [1] done processing
+    01:19:14 - cmdstanpy - INFO - Chain [1] start processing
+    01:19:15 - cmdstanpy - INFO - Chain [1] done processing
+    01:19:15 - cmdstanpy - INFO - Chain [1] start processing
+    01:19:16 - cmdstanpy - INFO - Chain [1] done processing
+    01:19:16 - cmdstanpy - INFO - Chain [1] start processing
+    01:19:17 - cmdstanpy - INFO - Chain [1] done processing
+    01:19:17 - cmdstanpy - INFO - Chain [1] start processing
+    01:19:18 - cmdstanpy - INFO - Chain [1] done processing
+    01:19:18 - cmdstanpy - INFO - Chain [1] start processing
+    01:19:19 - cmdstanpy - INFO - Chain [1] done processing
+    01:19:19 - cmdstanpy - INFO - Chain [1] start processing
+    01:19:20 - cmdstanpy - INFO - Chain [1] done processing
+    01:19:20 - cmdstanpy - INFO - Chain [1] start processing
+    01:19:21 - cmdstanpy - INFO - Chain [1] done processing
+    01:19:22 - cmdstanpy - INFO - Chain [1] start processing
+    01:19:23 - cmdstanpy - INFO - Chain [1] done processing
+    01:19:23 - cmdstanpy - INFO - Chain [1] start processing
+    01:19:24 - cmdstanpy - INFO - Chain [1] done processing
+    01:19:24 - cmdstanpy - INFO - Chain [1] start processing
+    01:19:25 - cmdstanpy - INFO - Chain [1] done processing
+    01:19:25 - cmdstanpy - INFO - Chain [1] start processing
+    01:19:26 - cmdstanpy - INFO - Chain [1] done processing
+    01:19:26 - cmdstanpy - INFO - Chain [1] start processing
+    01:19:27 - cmdstanpy - INFO - Chain [1] done processing
+    01:19:28 - cmdstanpy - INFO - Chain [1] start processing
+    01:19:29 - cmdstanpy - INFO - Chain [1] done processing
+    01:19:29 - cmdstanpy - INFO - Chain [1] start processing
+    01:19:30 - cmdstanpy - INFO - Chain [1] done processing
+    01:19:31 - cmdstanpy - INFO - Chain [1] start processing
+    01:19:32 - cmdstanpy - INFO - Chain [1] done processing
+    01:19:32 - cmdstanpy - INFO - Chain [1] start processing
+    01:19:33 - cmdstanpy - INFO - Chain [1] done processing
+    01:19:33 - cmdstanpy - INFO - Chain [1] start processing
+    01:19:34 - cmdstanpy - INFO - Chain [1] done processing
+    01:19:34 - cmdstanpy - INFO - Chain [1] start processing
+    01:19:35 - cmdstanpy - INFO - Chain [1] done processing
+    01:19:35 - cmdstanpy - INFO - Chain [1] start processing
+    01:19:36 - cmdstanpy - INFO - Chain [1] done processing
+    01:19:36 - cmdstanpy - INFO - Chain [1] start processing
+    01:19:37 - cmdstanpy - INFO - Chain [1] done processing
+    01:19:37 - cmdstanpy - INFO - Chain [1] start processing
+    01:19:38 - cmdstanpy - INFO - Chain [1] done processing
+    01:19:38 - cmdstanpy - INFO - Chain [1] start processing
+    01:19:39 - cmdstanpy - INFO - Chain [1] done processing
+    01:19:39 - cmdstanpy - INFO - Chain [1] start processing
+    01:19:40 - cmdstanpy - INFO - Chain [1] done processing
+    01:19:40 - cmdstanpy - INFO - Chain [1] start processing
+    01:19:41 - cmdstanpy - INFO - Chain [1] done processing
+    01:19:41 - cmdstanpy - INFO - Chain [1] start processing
+    01:19:42 - cmdstanpy - INFO - Chain [1] done processing
+    01:19:42 - cmdstanpy - INFO - Chain [1] start processing
+    01:19:43 - cmdstanpy - INFO - Chain [1] done processing
+    01:19:43 - cmdstanpy - INFO - Chain [1] start processing
+    01:19:45 - cmdstanpy - INFO - Chain [1] done processing
+    01:19:45 - cmdstanpy - INFO - Chain [1] start processing
+    01:19:46 - cmdstanpy - INFO - Chain [1] done processing
+    01:19:46 - cmdstanpy - INFO - Chain [1] start processing
+    01:19:46 - cmdstanpy - INFO - Chain [1] done processing
+    01:19:47 - cmdstanpy - INFO - Chain [1] start processing
+    01:19:47 - cmdstanpy - INFO - Chain [1] done processing
+    01:19:48 - cmdstanpy - INFO - Chain [1] start processing
+    01:19:48 - cmdstanpy - INFO - Chain [1] done processing
+    01:19:48 - cmdstanpy - INFO - Chain [1] start processing
+    01:19:49 - cmdstanpy - INFO - Chain [1] done processing
+    01:19:49 - cmdstanpy - INFO - Chain [1] start processing
+    01:19:50 - cmdstanpy - INFO - Chain [1] done processing
+    01:19:50 - cmdstanpy - INFO - Chain [1] start processing
+    01:19:51 - cmdstanpy - INFO - Chain [1] done processing
+    01:19:51 - cmdstanpy - INFO - Chain [1] start processing
+    01:19:52 - cmdstanpy - INFO - Chain [1] done processing
+    01:19:52 - cmdstanpy - INFO - Chain [1] start processing
+    01:19:52 - cmdstanpy - INFO - Chain [1] done processing
+    01:19:53 - cmdstanpy - INFO - Chain [1] start processing
+    01:19:53 - cmdstanpy - INFO - Chain [1] done processing
+    01:19:54 - cmdstanpy - INFO - Chain [1] start processing
+    01:19:54 - cmdstanpy - INFO - Chain [1] done processing
+    01:19:54 - cmdstanpy - INFO - Chain [1] start processing
+    01:19:55 - cmdstanpy - INFO - Chain [1] done processing
+    01:19:55 - cmdstanpy - INFO - Chain [1] start processing
+    01:19:55 - cmdstanpy - INFO - Chain [1] done processing
+    01:19:56 - cmdstanpy - INFO - Chain [1] start processing
+    01:19:56 - cmdstanpy - INFO - Chain [1] done processing
+    01:19:56 - cmdstanpy - INFO - Chain [1] start processing
+    01:19:57 - cmdstanpy - INFO - Chain [1] done processing
+    01:19:57 - cmdstanpy - INFO - Chain [1] start processing
+    01:19:58 - cmdstanpy - INFO - Chain [1] done processing
+    01:19:58 - cmdstanpy - INFO - Chain [1] start processing
+    01:19:58 - cmdstanpy - INFO - Chain [1] done processing
+    01:19:59 - cmdstanpy - INFO - Chain [1] start processing
+    01:19:59 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:00 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:00 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:00 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:01 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:02 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:02 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:02 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:03 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:03 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:04 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:04 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:05 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:05 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:06 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:06 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:06 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:07 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:07 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:08 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:08 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:08 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:09 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:09 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:10 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:10 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:11 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:11 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:11 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:11 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:12 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:12 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:12 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:13 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:13 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:13 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:14 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:14 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:14 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:15 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:15 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:15 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:16 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:16 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:17 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:17 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:18 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:18 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:19 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:19 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:19 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:19 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:20 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:20 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:21 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:21 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:21 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:22 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:22 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:22 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:23 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:23 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:24 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:24 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:24 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:24 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:25 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:25 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:27 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:27 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:27 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:28 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:28 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:28 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:29 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:29 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:29 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:30 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:30 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:31 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:32 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:32 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:32 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:32 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:33 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:33 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:34 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:34 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:35 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:35 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:35 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:35 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:36 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:36 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:36 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:37 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:37 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:37 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:38 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:38 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:38 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:39 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:39 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:40 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:40 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:40 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:41 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:41 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:42 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:42 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:43 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:43 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:44 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:44 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:45 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:45 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:45 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:46 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:46 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:47 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:47 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:47 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:48 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:48 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:49 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:49 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:50 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:50 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:51 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:51 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:51 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:52 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:52 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:53 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:54 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:54 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:54 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:55 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:55 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:55 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:56 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:56 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:57 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:57 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:57 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:58 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:59 - cmdstanpy - INFO - Chain [1] done processing
+    01:20:59 - cmdstanpy - INFO - Chain [1] start processing
+    01:20:59 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:00 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:00 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:00 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:01 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:01 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:01 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:02 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:02 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:02 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:03 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:03 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:04 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:04 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:04 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:04 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:05 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:05 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:06 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:06 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:07 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:07 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:07 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:08 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:08 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:09 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:09 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:10 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:10 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:11 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:11 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:11 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:12 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:12 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:12 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:13 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:13 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:13 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:14 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:14 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:15 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:15 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:16 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:16 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:16 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:17 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:17 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:18 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:18 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:18 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:19 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:19 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:20 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:20 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:21 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:21 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:22 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:22 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:22 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:23 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:23 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:23 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:24 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:24 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:25 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:25 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:26 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:26 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:26 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:27 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:27 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:27 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:28 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:28 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:29 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:29 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:29 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:30 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:30 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:30 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:31 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:31 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:32 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:32 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:32 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:33 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:33 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:33 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:34 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:34 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:35 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:35 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:36 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:36 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:37 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:37 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:37 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:38 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:38 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:38 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:39 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:39 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:39 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:40 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:40 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:40 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:41 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:41 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:41 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:42 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:42 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:43 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:43 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:44 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:44 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:44 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:45 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:46 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:46 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:47 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:47 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:48 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:48 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:48 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:49 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:49 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:50 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:50 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:51 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:51 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:51 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:52 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:52 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:53 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:53 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:53 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:54 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:54 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:55 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:55 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:55 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:56 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:56 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:56 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:57 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:57 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:57 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:57 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:58 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:58 - cmdstanpy - INFO - Chain [1] start processing
+    01:21:59 - cmdstanpy - INFO - Chain [1] done processing
+    01:21:59 - cmdstanpy - INFO - Chain [1] start processing
+    01:22:00 - cmdstanpy - INFO - Chain [1] done processing
+    01:22:00 - cmdstanpy - INFO - Chain [1] start processing
+    01:22:01 - cmdstanpy - INFO - Chain [1] done processing
+    01:22:01 - cmdstanpy - INFO - Chain [1] start processing
+    01:22:02 - cmdstanpy - INFO - Chain [1] done processing
+    01:22:02 - cmdstanpy - INFO - Chain [1] start processing
+    01:22:03 - cmdstanpy - INFO - Chain [1] done processing
+    01:22:03 - cmdstanpy - INFO - Chain [1] start processing
+    01:22:03 - cmdstanpy - INFO - Chain [1] done processing
+    01:22:03 - cmdstanpy - INFO - Chain [1] start processing
+    01:22:04 - cmdstanpy - INFO - Chain [1] done processing
+    01:22:04 - cmdstanpy - INFO - Chain [1] start processing
+    01:22:04 - cmdstanpy - INFO - Chain [1] done processing
+    01:22:05 - cmdstanpy - INFO - Chain [1] start processing
+    01:22:05 - cmdstanpy - INFO - Chain [1] done processing
+    01:22:06 - cmdstanpy - INFO - Chain [1] start processing
+    01:22:06 - cmdstanpy - INFO - Chain [1] done processing
+    01:22:06 - cmdstanpy - INFO - Chain [1] start processing
+    01:22:07 - cmdstanpy - INFO - Chain [1] done processing
+    01:22:07 - cmdstanpy - INFO - Chain [1] start processing
+    01:22:07 - cmdstanpy - INFO - Chain [1] done processing
+    01:22:08 - cmdstanpy - INFO - Chain [1] start processing
+    01:22:08 - cmdstanpy - INFO - Chain [1] done processing
+    01:22:08 - cmdstanpy - INFO - Chain [1] start processing
+    01:22:09 - cmdstanpy - INFO - Chain [1] done processing
+    01:22:09 - cmdstanpy - INFO - Chain [1] start processing
+    01:22:10 - cmdstanpy - INFO - Chain [1] done processing
+    01:22:10 - cmdstanpy - INFO - Chain [1] start processing
+    01:22:11 - cmdstanpy - INFO - Chain [1] done processing
+    01:22:11 - cmdstanpy - INFO - Chain [1] start processing
+    01:22:12 - cmdstanpy - INFO - Chain [1] done processing
+    01:22:12 - cmdstanpy - INFO - Chain [1] start processing
+    01:22:13 - cmdstanpy - INFO - Chain [1] done processing
+    
+
+    CPU times: total: 3min 25s
+    Wall time: 23min 4s
+    
 
 ### Predict models
 
@@ -478,6 +4493,10 @@ for key in train_dict.keys():
     sales.extend(predict['yhat'])
 ```
 
+    CPU times: total: 2min 22s
+    Wall time: 5min
+    
+
 <a id='goto5c'></a>
 # <h2 style="background-color:gold;font-family:newtimeroman;color:black;font-size:200%;text-align:center;border-radius: 50px 15px;">Final Touches</h2>
 
@@ -497,6 +4516,63 @@ submission['sales'] = sales
 submission.head()
 ```
 
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>sales</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>3000888</td>
+      <td>4.436991</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3002670</td>
+      <td>3.969976</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3004452</td>
+      <td>4.661190</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3006234</td>
+      <td>4.531703</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>3008016</td>
+      <td>2.282255</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
 ### Convert to csv
 
 
@@ -513,6 +4589,9 @@ submission.to_csv('output10.csv', index=False)
 
 **output8.csv:** (changepoint_prior_scale = 3)
 * Score (rmsle): 0.46566
+
+**output10.csv:** (changepoint_prior_scale = 3.5)
+* Score (rmsle): 0.46567
 
 **output10.csv:** (changepoint_prior_scale = 4)
 * Score (rmsle): 0.46577
