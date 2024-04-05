@@ -21,8 +21,6 @@ ___
 
 3. [Final Project PDF](https://github.com/ale-uy/StoreSalesTimeSeriesForecasting/blob/main/README.pdf)
 
-4. [Conclusions](#goto4)
-
 <a id='goto1'></a>
 # <h1 style="background-color:orange;font-family:newtimeroman;color:black;font-size:300%;text-align:center;border-radius: 15px 50px;">Notebook Description</h1>
 
@@ -45,28 +43,6 @@ Current subjective forecasting methods for retail have little data to back them 
 If successful, you'll have flexed some new skills in a real world example. For grocery stores, more accurate forecasting can decrease food waste related to overstocking and improve customer satisfaction. The results of this ongoing competition, over time, might even ensure your local store has exactly what you need the next time you shop.
 
 **Author: [Ale uy](https://www.kaggle.com/lasm1984)**
-
-<a id='goto4'></a>
-# <h1 style="background-color:orange;font-family:newtimeroman;color:black;font-size:300%;text-align:center;border-radius: 15px 50px;">Conclusions</h1>
-
-[Back](#goto0)
-
-### Evaluation
-The evaluation metric for this competition is **Root Mean Squared Logarithmic Error**.
-
-The RMSLE is calculated as:
-$$
-\text{RMSLE} = \sqrt{\frac{1}{n} \sum_{i=1}^{n} \left(\log(1+y^i) - \log(1+y_i)\right)^2}
-$$
-
-Where: 
-
-$$ 
-n - \text{ represents the total number of instances.,}\\
-y^i - \text{ is the predicted target value for instance } (i),\\
-y_i - \text{ is the actual target value for instance} (i),\\
-\log - \text{ denotes the natural logarithm.}
-$$
 
 ### Submissions Scores
 
