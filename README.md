@@ -17,7 +17,7 @@ ___
 
 1. [Notebook Description](#goto1)
 
-2. [Notebook file](https://github.com/ale-uy/StoreSalesTimeSeriesForecasting/blob/main/StoreSales.ipynb)
+2. [Notebook File](https://github.com/ale-uy/StoreSalesTimeSeriesForecasting/blob/main/StoreSales.ipynb)
 
 3. [Final Project PDF](https://github.com/ale-uy/StoreSalesTimeSeriesForecasting/blob/main/README.pdf)
 
