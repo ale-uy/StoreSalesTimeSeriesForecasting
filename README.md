@@ -15,14 +15,14 @@ ___
 
 0. [Table of Contents](#goto0)
 
-1. [Notebook Description](#goto1)
+1. [Challenge Description](#goto1)
 
 2. [Notebook File](https://github.com/ale-uy/StoreSalesTimeSeriesForecasting/blob/main/StoreSales.ipynb)
 
 3. [Final Project PDF](https://github.com/ale-uy/StoreSalesTimeSeriesForecasting/blob/main/README.pdf)
 
 <a id='goto1'></a>
-# <h1 style="background-color:orange;font-family:newtimeroman;color:black;font-size:300%;text-align:center;border-radius: 15px 50px;">Notebook Description</h1>
+# <h1 style="background-color:orange;font-family:newtimeroman;color:black;font-size:300%;text-align:center;border-radius: 15px 50px;">Challenge Description</h1>
 
 [Back](#goto0)
 
@@ -46,7 +46,6 @@ If successful, you'll have flexed some new skills in a real world example. For g
 
 ### Submissions Scores
 
-**output.csv:** (with hyperparameter `changepoint_prior_scale = 3`)
-* Score (rmsle): 0.46566
+> Score (rmsle): 0.46566
 
 This score gives this model a place among the 20% of best performance within the competition.
